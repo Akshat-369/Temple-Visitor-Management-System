@@ -407,7 +407,6 @@ const AdminDashboard: React.FC = () => {
               <div><p className="text-xs text-slate-400">From</p><p className="font-medium text-sm">{selectedVisit.fromDate}</p></div>
               <div><p className="text-xs text-slate-400">To</p><p className="font-medium text-sm">{selectedVisit.toDate}</p></div>
               <div><p className="text-xs text-slate-400">Arrival Time</p><p className="font-medium text-sm">{formatTime12h(selectedVisit.arrivalTime)}</p></div>
-              <div><p className="text-xs text-slate-400">No. of Representatives</p><p className="font-medium text-sm">{selectedVisit.numberOfRepresentatives}</p></div>
               <div><p className="text-xs text-slate-400">Kids</p><p className="font-medium text-sm">{selectedVisit.numberOfKids}</p></div>
               <div><p className="text-xs text-slate-400">Elderly</p><p className="font-medium text-sm">{selectedVisit.numberOfElderly}</p></div>
             </div>

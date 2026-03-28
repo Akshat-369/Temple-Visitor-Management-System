@@ -392,33 +392,21 @@ const VisitForm: React.FC = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1.5">No. of Representatives</label>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1.5">Total Visitors *</label>
+                <div className="relative">
+                  <Users size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
                   <input
                     type="number"
                     min={1}
-                    value={form.numberOfRepresentatives}
-                    onChange={(e) => updateField('numberOfRepresentatives', parseInt(e.target.value) || 1)}
-                    className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+                    value={form.totalVisitors}
+                    onChange={(e) => updateField('totalVisitors', parseInt(e.target.value) || 1)}
+                    className={`w-full pl-9 pr-4 py-2.5 bg-slate-50 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/30 ${
+                      errors.totalVisitors ? 'border-red-300' : 'border-slate-200'
+                    }`}
                   />
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1.5">Total Visitors *</label>
-                  <div className="relative">
-                    <Users size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-                    <input
-                      type="number"
-                      min={1}
-                      value={form.totalVisitors}
-                      onChange={(e) => updateField('totalVisitors', parseInt(e.target.value) || 1)}
-                      className={`w-full pl-9 pr-4 py-2.5 bg-slate-50 border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/30 ${
-                        errors.totalVisitors ? 'border-red-300' : 'border-slate-200'
-                      }`}
-                    />
-                  </div>
-                  {errors.totalVisitors && <p className="text-xs text-red-500 mt-1">{errors.totalVisitors}</p>}
-                </div>
+                {errors.totalVisitors && <p className="text-xs text-red-500 mt-1">{errors.totalVisitors}</p>}
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
